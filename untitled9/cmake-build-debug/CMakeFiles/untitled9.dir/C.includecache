@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/pearsefrost/CLionProjects/untitled9/game_functions.c
+stdio.h
+-
+game_functions.h
+/Users/pearsefrost/CLionProjects/untitled9/game_functions.h
+
+/Users/pearsefrost/CLionProjects/untitled9/game_functions.h
+game_init.h
+/Users/pearsefrost/CLionProjects/untitled9/game_init.h
+
+/Users/pearsefrost/CLionProjects/untitled9/game_init.h
+
