@@ -8,8 +8,16 @@
 #define PLAYERS_NUM 2
 
 void initialize_players(player players[PLAYERS_NUM]) {
-    players[].num_pieces=0;
-    players[].player_color=RED;
+    for(int i=0;i<PLAYERS_NUM;i++){
+        players[i].num_controlled=18;
+        players[i].player_color=i;
+        players[i].num_captured=0;
+        players[i].num_reserved=0;
+
+        printf("Enter players %d's name :",i+1);
+        scanf("%s",players[i].name);
+    }
+
 }
 
 

@@ -10,6 +10,7 @@ void gameloop(square board[BOARD_SIZE][BOARD_SIZE],player players[PLAYERS_NUM]){
            while(count<10){
                if(count%2==0) {
                    printf("Player1 turn");
+                   printPlayerInfo(players,count%2);
                    print_board(board);
                    int x,y;
                    move direct;
@@ -19,14 +20,16 @@ void gameloop(square board[BOARD_SIZE][BOARD_SIZE],player players[PLAYERS_NUM]){
                        scanf(" %d", &x);
                        printf("y co-ordinate:\n");
                        scanf(" %d", &y);
-                       while(board[x][y]!= INVALID||x<8||y<8||);
-                   }
+                   }while(0);
+
                   printf("What way would you like to move:\n");
                   printf("1.Moves RIGHT\n");
                   printf("2.Moves LEFT\n");
                   printf("3.Moves UP\n");
                   printf("4.Moves DOWN\n");
                   scanf("%d",&direct);
+                  direct--;
+
 
 
 
@@ -40,40 +43,38 @@ void gameloop(square board[BOARD_SIZE][BOARD_SIZE],player players[PLAYERS_NUM]){
                count++;
            }
 }
-void movepiece(square board[BOARD_SIZE][BOARD_SIZE],int x, int y,move direct){
-    int nextx=x;
-    int nexty=y;
-    if(direct==UP){
-        nexty--;
-    }else if(direct==DOWN){
-        nexty++;
-    }else if(direct==LEFT){
-        nextx++;
-    }else if(direct==RIGHT){
-        nextx--;
-    }
+ void movepiece(square board[BOARD_SIZE][BOARD_SIZE],int x, int y,move direct) {
+     int nextx = x;
+     int nexty = y;
+     if (direct == UP) {
+         nexty--;
+     } else if (direct == DOWN) {
+         nexty++;
+     } else if (direct == LEFT) {
+         nextx--;
+     } else if (direct == RIGHT) {
+         nextx++;
+     }
 
-    if(board[nexty][nextx].num_pieces==0) {
-        board[nexty][nextx].num_pieces = board[y][x].num_pieces;
-        board[y][x].num_pieces = 0;
-        board[nexty][nextx].stack=board[y][x].stack;
-        board[y][x].stack=0;
-    }
-    struct piece* temp=board[y][x].stack;
-
-    while(temp->next!=0){
-        temp=temp->next;
-    }
-    temp->next=board[nexty][nextx].stack;
-    board[nexty][nextx].stack=board[y][x].stack;
-    board[y][x].stack=0;
-
-    board[nexty][nextx].num_pieces+=board[y][x].num_pieces;
-    board[y][x].num_pieces=0;
+     if (board[nexty][nextx].num_pieces == 0) {
+         board[nexty][nextx].num_pieces = board[y][x].num_pieces;
+         board[y][x].num_pieces = 0;
+         board[nexty][nextx].stack = board[y][x].stack;
+         board[y][x].stack = 0;
+     } else {
 
 
+         struct piece *temp = board[y][x].stack;
 
+         while (temp->next != 0) {
+             temp = temp->next;
+         }
+         temp->next = board[nexty][nextx].stack;
+         board[nexty][nextx].stack = board[y][x].stack;
+         board[y][x].stack = 0;
 
+         board[nexty][nextx].num_pieces += board[y][x].num_pieces;
+         board[y][x].num_pieces = 0;
 
-
-}
+     }
+     }

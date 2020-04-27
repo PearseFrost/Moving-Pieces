@@ -71,3 +71,12 @@ void print_board(square board[BOARD_SIZE][BOARD_SIZE]){
         printf("|\n");
     }
 }
+void printPlayerInfo(struct player players[PLAYERS_NUM],int player_no){
+
+    printf("\nPlayers name is :%s\n",players[player_no].name);
+    printf("No. of controlled stacks :%d\n",players[player_no].num_controlled);
+    printf("No. of reserved pieces :%d\n",players[player_no].num_reserved);
+    printf("No of captured pieces :%d\n",players[player_no].num_captured);
+
+
+}

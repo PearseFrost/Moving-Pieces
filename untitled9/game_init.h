@@ -34,6 +34,14 @@ typedef enum square_type {
 typedef struct player{
     //the color associated with the player
     color player_color;
+
+    int num_captured;
+
+    int num_reserved;
+
+    int num_controlled;
+
+    char name[20];
     /*
      * A player should also be characterized by:
      * name,
@@ -64,6 +72,8 @@ typedef struct square {
 
     //number of pieces on the square
     int num_pieces;
+
+
 
 }square;
 

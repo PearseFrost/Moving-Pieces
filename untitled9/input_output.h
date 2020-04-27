@@ -11,3 +11,4 @@
 
 //Function to print the board
 void print_board(square board[BOARD_SIZE][BOARD_SIZE]);
+void printPlayerInfo(struct player players[PLAYERS_NUM],int player_no);
