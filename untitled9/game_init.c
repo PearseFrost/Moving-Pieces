@@ -8,8 +8,8 @@
 #define PLAYERS_NUM 2
 
 void initialize_players(player players[PLAYERS_NUM]) {
-    players[0].player_color=GREEN;
-    players[0].player_color=RED;
+    players[].num_pieces=0;
+    players[].player_color=RED;
 }
 
 

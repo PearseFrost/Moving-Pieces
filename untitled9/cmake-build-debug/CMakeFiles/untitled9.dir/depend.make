@@ -4,6 +4,7 @@
 CMakeFiles/untitled9.dir/game_functions.c.o: ../game_functions.c
 CMakeFiles/untitled9.dir/game_functions.c.o: ../game_functions.h
 CMakeFiles/untitled9.dir/game_functions.c.o: ../game_init.h
+CMakeFiles/untitled9.dir/game_functions.c.o: ../input_output.h
 
 CMakeFiles/untitled9.dir/game_init.c.o: ../game_init.c
 CMakeFiles/untitled9.dir/game_init.c.o: ../game_init.h

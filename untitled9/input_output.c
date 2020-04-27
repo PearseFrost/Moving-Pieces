@@ -16,14 +16,55 @@ void print_board(square board[BOARD_SIZE][BOARD_SIZE]){
     for(int i = 0; i < BOARD_SIZE; i ++){
         for (int j = 0; j < BOARD_SIZE; j++){
             if(board[i][j].type == VALID) {
-                if(board[i][j].stack == NULL)
+                if (board[i][j].stack == NULL)
                     printf("|   ");
-                else{
+                else {
                     if (board[i][j].stack->p_color == GREEN)
                         printf("| G ");
-                    else printf("| R ");
+                    else if (board[i][j].stack->p_color == RED)
+                        printf("| R ");
+                    else {
+                        printf("| E");
+                    }
+                }
+                if (board[i][j].num_pieces > 1) {
+                    if (board[i][j].stack->next->p_color == GREEN) {
+                        printf("G");
+                    } else if (board[i][j].stack->next->p_color == RED) {
+                        printf("R");
+                    } else {
+                        printf("E");
+                    }
+                }
+                if (board[i][j].num_pieces > 2) {
+                    if (board[i][j].stack->next->next->p_color == GREEN) {
+                        printf("G");
+                    } else if (board[i][j].stack->next->next->p_color == RED) {
+                        printf("R");
+                    } else {
+                        printf("E");
+                    }
+                }
+                if (board[i][j].num_pieces > 3) {
+                    if (board[i][j].stack->next->next->next->p_color == GREEN) {
+                        printf("G");
+                    } else if (board[i][j].stack->next->next->next->p_color == RED) {
+                        printf("R");
+                    } else {
+                        printf("E");
+                    }
+                }
+                if (board[i][j].num_pieces > 4) {
+                    if (board[i][j].stack->next->next->next->next->p_color == GREEN) {
+                        printf("G");
+                    } else if (board[i][j].stack->next->next->next->next->p_color == RED) {
+                        printf("R");
+                    } else {
+                        printf("E");
+                    }
                 }
             }
+
             else
                 printf("| - ");
         }

@@ -12,8 +12,8 @@ int main() {
 
     initialize_board(board);
 
-    print_board(board);
+
     gameloop(board,players);
-    print_board(board);
+
     return 0;
 }
