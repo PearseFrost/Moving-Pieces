@@ -7,15 +7,15 @@
 #include <stdlib.h>
 #define PLAYERS_NUM 2
 
-void initialize_players(player players[PLAYERS_NUM]) {
+void initialize_players(player players[PLAYERS_NUM]) {//Function to initialize the players
     for(int i=0;i<PLAYERS_NUM;i++){
-        players[i].num_controlled=18;
+        players[i].num_controlled=18;//Sets no. of controlled pieces by both players to 18 at the beginning
         players[i].player_color=i;
-        players[i].num_captured=0;
-        players[i].num_reserved=0;
+        players[i].num_captured=0;//Sets no. of captured pieces by both players to 0 at the beginning
+        players[i].num_reserved=0;//Sets no. of reserved pieces by both players to 0 at the beginning
 
-        printf("Enter players %d's name :",i+1);
-        scanf("%s",players[i].name);
+        printf("Enter players %d's name :",i+1);//Asks for players name
+        scanf("%s",players[i].name);//Scans in the name typed in by user
     }
 
 }
