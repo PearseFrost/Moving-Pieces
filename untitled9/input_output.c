@@ -11,7 +11,7 @@
  * Valid squares with a GREEN piece are printed as | G |
  * Valid squares with a RED piece are printed as | R | */
 
-void print_board(square board[BOARD_SIZE][BOARD_SIZE]){
+void print_board(square board[BOARD_SIZE][BOARD_SIZE]){//Function to print the board
     printf("****** The Board ******\n");
     for(int i = 0; i < BOARD_SIZE; i ++){
         for (int j = 0; j < BOARD_SIZE; j++){
@@ -71,12 +71,12 @@ void print_board(square board[BOARD_SIZE][BOARD_SIZE]){
         printf("|\n");
     }
 }
-void printPlayerInfo(struct player players[PLAYERS_NUM],int player_no){
+void printPlayerInfo(struct player players[PLAYERS_NUM],int player_no){//Function to print player information
 
-    printf("\nPlayers name is :%s\n",players[player_no].name);
-    printf("No. of controlled stacks :%d\n",players[player_no].num_controlled);
-    printf("No. of reserved pieces :%d\n",players[player_no].num_reserved);
-    printf("No of captured pieces :%d\n",players[player_no].num_captured);
+    printf("\nPlayers name is :%s\n",players[player_no].name);//Prints name user inputed
+    printf("No. of controlled stacks :%d\n",players[player_no].num_controlled);//Prints no. of controlled stacks that player has
+    printf("No. of reserved pieces :%d\n",players[player_no].num_reserved);//Prints no. of reserved pieces that player has
+    printf("No of captured pieces :%d\n",players[player_no].num_captured);//Prints no. of reserved pieces that player has
 
 
 }

@@ -1,16 +1,17 @@
 //
 // Created by Pearse Frost on 27/03/2020.
 //
-
+//All necessary libraries used in the file
 #include "game_init.h"
 #include <stdio.h>
 #include <stdlib.h>
+//Defines max number of players
 #define PLAYERS_NUM 2
 
 void initialize_players(player players[PLAYERS_NUM]) {//Function to initialize the players
     for(int i=0;i<PLAYERS_NUM;i++){
         players[i].num_controlled=18;//Sets no. of controlled pieces by both players to 18 at the beginning
-        players[i].player_color=i;
+        players[i].player_color=i;//Assigns player color to each player
         players[i].num_captured=0;//Sets no. of captured pieces by both players to 0 at the beginning
         players[i].num_reserved=0;//Sets no. of reserved pieces by both players to 0 at the beginning
 
